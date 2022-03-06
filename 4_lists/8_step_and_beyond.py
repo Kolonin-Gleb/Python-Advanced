@@ -21,12 +21,8 @@
 # # Почему результирующий срез - разный?
 
 
-from multiprocessing.sharedctypes import copy
-
-
 numbers = [5, 10, 15, 25]
 # print(numbers[::-2])
-
 
 # Создание копии списка
 
