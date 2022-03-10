@@ -26,7 +26,7 @@ def get_pascal_triangle(rows_ammount):
 def print_pascal_triangle(pascal_triangle):
     for level in pascal_triangle: # По вложенным спискам
         for el in level: # По эл. вложенных списков
-            print(str(el) + " ", end="")
+            print(el, end=" ")
         print() # Для переноса строки
 
 ############################
