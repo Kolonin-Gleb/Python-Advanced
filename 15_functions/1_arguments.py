@@ -7,7 +7,7 @@
 def make_circle(x, y, radius, line_width, fill):
     print(x, y, radius, line_width, fill)
 
-# make_circle(x=10, y =5, radius=17, line_width=2.5, fill=True)
+# make_circle(x=10, y=5, radius=17, line_width=2.5, fill=True)
 
 
 # Необязательные аргументы. Их значение по умолчанию указывается через =
