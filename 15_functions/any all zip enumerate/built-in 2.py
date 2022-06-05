@@ -115,4 +115,3 @@ pairs = zip(capitals, countries, population)
 
 for capital, country, people in zip(capitals, countries, population):
     print(f'{capital} is the capital of {country}, population equal {people} people.')
-
