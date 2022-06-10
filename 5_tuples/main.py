@@ -21,6 +21,7 @@ print(*numbers, sep="\n")
 # Задача на кортеж
 
 # Список из кортежей
+'''
 poets = [
     ('Есенин', 13),
     ('Тургенев', 14),
@@ -28,7 +29,7 @@ poets = [
     ('Лермонтов', 20),
     ('Фет', 15)
 ]
-
+'''
 # Это сортировка пузырьком (меньшие значения - более легкие - поднимаются вверх)
 # По числам в кортежах
 '''
@@ -67,6 +68,8 @@ print(product)
 '''
 
 # Распаковка кортежа
+'''
+
 colors = ('red', 'green', 'blue', 'cyan')
 
 a, b, c, d = colors
@@ -86,4 +89,37 @@ a, b, _, _ = colors
 # print(a, b, c)
 # b, a, c = c, a, b
 # print(b, c, a)
+'''
 
+
+# tasks
+'''
+countries = ('Russia', 'Argentina', 'Slovakia', 'Canada', 'Slovenia', 'Italy', 'Spain', 'Ukraine', 'Chile', 'Cameroon')
+print(countries[3:-2:1])
+'''
+
+# Вершина пароаболы
+'''
+a = int(input())
+b = int(input())
+c = int(input())
+
+x = -b / (2*a)
+y = (4*a*c-b**2) / (4*a)
+
+print(tuple([x, y]))
+'''
+
+count = int(input())
+tuples = []
+
+for tup in range(count):
+    name, score = tuple(input().split())
+    tuples.append(tuple([name, int(score)]))
+
+for tup in tuples:
+    print(*tup)
+print() # затем выводятся строки с фамилиями и оценками хорошистов и отличников (в том же порядке).
+for tup in tuples:
+    if tup[1] == 4 or tup[1] == 5:
+        print(*tup)

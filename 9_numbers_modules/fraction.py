@@ -39,3 +39,40 @@ print(f"{num1} * {num2} = {F(num1) * F(num2)}")
 print(f"{num1} / {num2} = {F(num1) / F(num2)}")
 '''
 
+# Сумма дробей до n
+'''
+from fractions import Fraction as F
+n = int(input())
+sum = 0
+dig = 1
+while dig <= n:
+    sum += F(1, dig*dig)
+    dig+=1
+print(sum)
+'''
+
+# Упорядоченные НЕсократимые дроби
+# знаменатель которых не превосходит n.
+from fractions import Fraction as F
+
+n = int(input())
+numerator = 1 # числитель
+denominator = n # знаменатель
+ans = set()
+
+while denominator != 0: # Буду генерировать сначала все дроби, с максимальным знаменателем с меньшим
+    while numerator < denominator:
+        ans.add(F(numerator, denominator))
+        numerator += 1
+    numerator = 1
+    denominator -= 1
+
+print(*sorted(list(ans)), sep="\n")
+
+'''
+Подсказка, gcd нужен для устранения дублей при сокращении дроби... А какой тип коллекций питона не содержит дублей? 
+Правильно - set
+Попробуйте использовать множество для хранения результатов
+'''
+# Исходя из подсказки и того факта, что дроби должны быть упорядочены я делаю вывод, что 
+# мне следует сначала сформировать все дроби, затем отсортировать и вывести
