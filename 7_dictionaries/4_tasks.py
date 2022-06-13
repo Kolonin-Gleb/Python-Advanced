@@ -57,9 +57,43 @@ print("course_num: ", end='')
 print(*courses[course_num], sep=', ')
 '''
 # Набор сообщений
-
+'''
 msg = input().capitalize()
 
 encoder = {}
+'''
 
+# Аннаграммы 1
+'''
+# Посчитать кол. всех букв в 1 вводе
+# Посчитать кол. всех букв в 2 вводе
+# Если все ключи совпадают и соответствующие им значения тоже, то Аннаграммы
+lst1 = [el for el in input()]
+lst2 = [el for el in input()]
+
+res1 = {}
+res2 = {}
+
+for el in lst1:
+    res1[el] = res1.get(el, 0) + 1
+for el in lst2:
+    res2[el] = res2.get(el, 0) + 1
+
+if res1 == res2:
+    print("YES")
+else:
+    print("NO")
+# Более элегантное решение
+print(("NO", "YES")[sorted(input()) == sorted(input())])
+'''
+
+'''
+p = "!#$%&'()*+,-./:;<=>?@[\]^_`{|}~: "
+str1 = [el for el in input().lower() if el not in p]
+str2 = [el for el in input().lower() if el not in p]
+
+print(("NO", "YES")[sorted(str1) == sorted(str2)])
+# Вижу зверей
+# Живу резвей
+'''
 
