@@ -98,7 +98,7 @@ info_kwargs(first_name='Gleb', last_name='Kolonin', age=17, job='student')
 '''
 
 # Вывод продуктов
-
+'''
 def print_products(*args):
     counter = 0
     for i in args:
@@ -107,7 +107,7 @@ def print_products(*args):
             print(f"{counter}) {i}")
     if counter == 0:
         print("Нет продуктов")
-
+'''
 
 # print_products('Бананы', [1, 2], ('Stepik',), 'Яблоки', '', 'Макароны', 5, True)
 # 1) Бананы
@@ -116,3 +116,17 @@ def print_products(*args):
 # print_products([4], {}, 1, 2, {'Beegeek'}, '')
 # Нет продуктов
 
+
+
+# Произовльное число аргументов. Будет получен кортеж
+def func1(*args):
+    print(type(args))
+    print(args)
+
+# Произвольное число именнованных аргументов. Будет получен словарь
+def func2(**kwargs):
+    print(type(kwargs))
+    print(kwargs)
+
+func1(1, 2 , 3, 4, 5)
+func2(a1='1', a2='2', a3='3', a4='4', a5='5')

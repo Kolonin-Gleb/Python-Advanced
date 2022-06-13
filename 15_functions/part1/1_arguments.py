@@ -22,7 +22,18 @@ def my_func(x, y):
 
 my_func(10, 2)
 '''
+# None - отсутствует значение по умолчанию.
+'''
+def matrix(n=1, m=None, value=0):
+    if m == None:
+        m = n
+    matr = []
+    for i in range(n):
+        matr.append([])
+        for j in range(m):
+            matr[i].append(value)
 
-def matrix(n=1, m=1, value=0):
-    mult = []
+    return matr
 
+print(matrix(3, 4, 9))
+'''

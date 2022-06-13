@@ -67,3 +67,52 @@ print(min(s1, s2, s3))
 print(max(s1, s2, s3))
 '''
 
+# Интересный подход к выполнению функции, соответствующей введённой команде
+'''
+def start():
+    print('start')
+def stop():
+    print('stop')
+def pause():
+    print('pause')
+def unknown():
+    print('unknown command')
+
+commands = {'start':start, 'stop':stop, 'pause':pause}
+command = input()
+commands.get(command, unknown)() # - Вернёт значение по ключу, т.е. функцию, которая будет выполняться Или вызовет команду, сообщающую о отсутствии команды
+'''
+# new tasks
+
+# Сортировка по расстоянию от центра
+'''
+points = [(-1, 1), (5, 6), (12, 0), (4, 3), (0, 1), (-3, 2), (0, 0), (-1, 3), (2, 0), (3, 0), (-9, 1), (3, 6), (8, 8)]
+print(sorted(points, key=lambda cortej: (cortej[0]**2 + cortej[1]**2)**0.5))
+'''
+
+# Математические функции
+'''
+from math import sin, sqrt
+
+def square(number):
+    return number ** 2
+def cube(number):
+    return number ** 3
+
+commands = {'квадрат': square, 'куб': cube, 'корень':sqrt, 'модуль':abs, 'синус':sin}
+num = int(input())
+command = input()
+
+print(commands[command](num))
+'''
+
+# Интересная сортировка-1
+'''
+lst = [num for num in input().split()]
+print(*sorted(lst, key=lambda str: sum([int(dig) for dig in str])))
+'''
+# Интересная сортировка-2
+''''''
+lst = sorted([int(num) for num in input().split()])
+lst = [str(num) for num in lst]
+print(*sorted(lst, key=lambda str: sum([int(dig) for dig in str])))
