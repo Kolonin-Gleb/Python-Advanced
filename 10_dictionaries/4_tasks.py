@@ -98,29 +98,31 @@ print(("NO", "YES")[sorted(str1) == sorted(str2)])
 '''
 
 # Телефонная книга
+# Разница в работе setdefault и get
+# 1) book.setdefault(name, []).append(mobile)
+# 2) book[name] = book.get(name, []).append(mobile) # НЕПРАВИЛЬНО
+# 2) book[name] = book.get(name, []) + [mobile] # ПРАВИЛЬНО
 '''
-'''
-
 contacts = dict()
 
 friends = int(input())
 for i in range(friends):
     phone, name = input().split(" ")
     # Сохранение контактов
-    # contacts
+    contacts[name] = contacts.get(name, []) + [phone]
 
-
-
-
-
+names = []
 requests = int(input())
 for i in range(requests):
-    name = input().capitalize()
+    names.append(input().capitalize())
 
 
-
-
-
-
-
+# output
+for i in range(requests):
+    name = names.pop(0)
+    if name not in contacts.keys():
+        print('абонент не найден')
+    else:
+        print(*contacts.get(name), sep=' ')
+'''
 
