@@ -97,3 +97,30 @@ print(("NO", "YES")[sorted(str1) == sorted(str2)])
 # Живу резвей
 '''
 
+# Телефонная книга
+'''
+'''
+
+contacts = dict()
+
+friends = int(input())
+for i in range(friends):
+    phone, name = input().split(" ")
+    # Сохранение контактов
+    # contacts
+
+
+
+
+
+requests = int(input())
+for i in range(requests):
+    name = input().capitalize()
+
+
+
+
+
+
+
+

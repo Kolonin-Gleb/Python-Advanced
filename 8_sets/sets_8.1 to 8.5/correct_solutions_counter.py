@@ -24,6 +24,3 @@ else:
     print(f'Верно решили {len(users_completed)} учащихся')
     print(f'Из всех попыток {successful_attempts_percentage}% верных')
 
-
-
-
