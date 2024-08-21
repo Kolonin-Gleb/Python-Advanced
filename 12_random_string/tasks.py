@@ -154,6 +154,91 @@ while tickets:
     print(tickets.pop())
 '''
 
-# Step 10 - 
+# Step 10 - Анаграмма 1
 '''
+from random import shuffle
+
+word = list(input())
+shuffle(word)
+print(''.join(word))
+'''
+
+# Step 11
+'''
+from random import randint
+
+nums = set(map(str, range(1, 76)))
+matrix = []
+for row in range(5):
+    matrix.append([nums.pop(),nums.pop(),nums.pop(),nums.pop(),nums.pop()])
+matrix[2][2] = '0'
+
+for row in range(5):
+    for col in range(5):
+        print(matrix[row][col].ljust(3), end=' ')
+    print() # Перенос строки
+'''
+
+# Step 12 Тайный друг
+'''
+from random import shuffle
+
+n = int(input())
+
+friends = []
+for i in range(n):
+    friends.append(input())
+shuffle(friends)
+
+for i in range(n):
+    print(friends[i], '-', friends[i-1])
+'''
+
+# Step 13 Генератор паролей 1
+'''
+from random import *
+from string import *
+
+# «l» (L маленькое);
+# «I» (i большое);
+# «1» (цифра);
+# «o» и «O» (большая и маленькая буквы);
+# «0» (цифра).
+def generate_password(length):
+    s = list((ascii_letters + digits))
+    [s.remove(c) for c in 'lI1oO0']
+    return ''.join(sample(s, length))
+
+
+def generate_passwords(count, length):
+    return [generate_password(length) for _ in range(count)]
+
+
+n, m = int(input()), int(input())
+print(*generate_passwords(n, m), sep="\n")
+'''
+
+# Step 13 Генератор паролей 2
+'''
+import random
+
+def generate_password(length):
+    result = []
+    digits = '23456789';
+    small_letters = 'qwertyuipasdfghjkzxcvbnm';
+    huge_letters = 'QWERTYUPASDFGHJKLZXCVBNM';
+    s = "qwertyuipasdfghjkzxcvbnmQWERTYUPASDFGHJKLZXCVBNM23456789"
+    result += random.sample([elem for elem in digits], 1)
+    result += random.sample([elem for elem in small_letters], 1)
+    result += random.sample([elem for elem in huge_letters], 1)
+    result += random.sample([elem for elem in s], length - 3)
+    print(''.join(result))
+
+def generate_passwords(count, length):
+    for i in range(count):
+        generate_password(length)
+
+n, m = int(input()), int(input())
+
+generate_passwords(n, m)
 '''
